@@ -60,6 +60,11 @@ Body :		Poppins, sans-serif;
 /*Body, layout*/
 .layout-boxed body, .layout-boxed html, .wrapper, body, html {
     height: 100%}
+    .wrapper, body {
+      overflow-x: hidden;
+      overflow-y: auto;
+  }
+  
 
 .h1, .h2, .h3, .h4, .h5, .h6, body, h1, h2, h3, h4, h5, h6 {
     font-family: Poppins, sans-serif;
@@ -137,6 +142,7 @@ img {
     margin: 0 auto;
     min-height: 100%;
     box-shadow: 0 0 8px rgba(0, 0, 0, .5);
+    position: relative;
 }
 .layout-boxed {
     background: url(../../images//boxed-bg.png) fixed;
@@ -358,7 +364,7 @@ a:active, a:focus, a:hover {
 }
 .content-header>h1, .content-header>.container>h1 {
     margin: 0 0 0px;
-    font-size: 24px;
+    font-size: 40px;
 	color: #455a64;
 }
 .content-header>.container>h1 {
@@ -458,53 +464,21 @@ a:active, a:focus, a:hover {
 /* GRIDS  */
 .contain {
   display: grid; 
-  grid-template-columns: 1.7fr; 
-  grid-template-rows: 0.6fr 1.4fr 1.4fr 1.4fr; 
+  grid-template-columns: 16% 84%; 
+  grid-template-rows: 0.2fr 0.5fr 1fr 1fr 1fr 0.7fr; 
   gap: 0px 0px; 
   grid-template-areas: 
-    "dashboardGrid"
-    "model4BoxGrid"
-    "model2BoxGrid"
-    "model3BoxGrid"; 
+    "navBarGrid navBarGrid"
+    "asideNavGrid bodyGrid"
+    "asideNavGrid bodyGrid"
+    "asideNavGrid bodyGrid"
+    "asideNavGrid bodyGrid"
+    "asideNavGrid footerGrid"; 
 }
-.model3BoxGrid {
-  display: grid; 
-  grid-template-columns: 1fr 1fr 1fr; 
-  grid-template-rows: 1fr; 
-  gap: 0px 10px; 
-  grid-template-areas: 
-    ". . ."; 
-  grid-area: model3BoxGrid; 
-}
-.model2BoxGrid {
-  display: grid; 
-  grid-template-columns: 1fr 1fr; 
-  grid-template-rows: 1fr; 
-  gap: 0px 10px; 
-  grid-template-areas: 
-    ". ."; 
-  grid-area: model2BoxGrid; 
-}
-.model4BoxGrid {
-  display: grid; 
-  grid-template-columns: 1fr 1fr 1fr 1fr; 
-  grid-template-rows: 1fr; 
-  gap: 0px 10px; 
-  grid-template-areas: 
-    ". . . ."; 
-  grid-area: model4BoxGrid; 
-}
-.dashboardGrid {
-  display: grid; 
-  grid-auto-columns: 1fr; 
-  grid-template-columns: 1fr; 
-  grid-template-rows: 1fr; 
-  gap: 0px 0px; 
-  grid-template-areas: 
-    "."; 
-  grid-area: dashboardGrid; 
-}
-
+.footerGrid { grid-area: footerGrid; }
+.asideNavGrid { grid-area: asideNavGrid; }
+.navBarGrid { grid-area: navBarGrid; }
+.bodyGrid { grid-area: bodyGrid; position: relative; z-index: 800px;}
 /*sidebar*/
 .main-sidebar {
     position: absolute;
